@@ -1,0 +1,6 @@
+[tool.vercel]
+entrypoint = "index:app"
+
+[tool.vercel.scripts]
+# Vercel serves static files from public/, not Flask's app/static folder.
+build = "python build_vercel.py"
