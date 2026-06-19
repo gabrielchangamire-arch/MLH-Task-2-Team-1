@@ -4,6 +4,8 @@ import os
 from flask import Flask, render_template
 from dotenv import load_dotenv
 
+from .hobbies_data import TEAM_HOBBIES
+
 load_dotenv()
 
 logging.basicConfig(
@@ -18,14 +20,10 @@ TEAM_MEMBERS = [
     {"name": "Gabriel Changamire", "photo": "gabriel-changamire.png"},
 ]
 
-# Add new pages here to include them in the navigation bar.
 NAV_PAGES = [
     {"endpoint": "index", "label": "Home"},
     {"endpoint": "hobbies", "label": "Hobbies"},
 ]
-
-# Add hobby entries here when ready: {"name": "...", "image": "..."}
-HOBBIES = []
 
 app = Flask(__name__)
 
@@ -51,7 +49,7 @@ def index():
 @app.route("/hobbies")
 def hobbies():
     logger.info("Serving hobbies page")
-    return render_template("hobbies.html", hobbies=HOBBIES)
+    return render_template("hobbies.html", team_hobbies=TEAM_HOBBIES)
 
 
 @app.errorhandler(404)
