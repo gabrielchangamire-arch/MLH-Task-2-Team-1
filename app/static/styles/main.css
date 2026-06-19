@@ -621,6 +621,136 @@ body {
     text-decoration: underline;
 }
 
+/* ================================ Education ================================= */
+
+.education-intro {
+    color: #555555;
+    font-size: 18px;
+    margin: -16px 0 36px;
+}
+
+.education-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    align-items: start;
+}
+
+.education-column {
+    background-color: #ffffff;
+    border-radius: 16px;
+    border-top: 4px solid var(--member-color, #1d539f);
+    padding: 24px 24px 28px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.education-member {
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: 700;
+    color: #15233d;
+    margin: 0 0 24px;
+}
+
+.education-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--member-color, #1d539f);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.education-timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 22px;
+    border-left: 2px solid #e3e6ee;
+    margin-left: 6px;
+}
+
+.education-item {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.education-item:last-child {
+    margin-bottom: 0;
+}
+
+.education-marker {
+    position: absolute;
+    left: -30px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--member-color, #1d539f);
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 2px var(--member-color, #1d539f);
+}
+
+.education-card {
+    background-color: #f7f8fb;
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+
+.education-dates {
+    color: var(--member-color, #1d539f);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 4px;
+}
+
+.education-degree {
+    font-size: 18px;
+    font-weight: 700;
+    color: #15233d;
+    margin: 0;
+}
+
+.education-institution {
+    font-size: 15px;
+    color: #2f3a4d;
+    margin: 3px 0 0;
+}
+
+.education-location {
+    color: #8a93a6;
+}
+
+.education-gpa {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--member-color, #1d539f);
+    margin: 4px 0 0;
+}
+
+.education-highlights {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #444c5c;
+    margin: 8px 0 0;
+    padding-left: 18px;
+}
+
+.education-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1d539f;
+    text-decoration: none;
+}
+
+.education-link:hover {
+    text-decoration: underline;
+}
+
 /* ================================== Map ===================================== */
 
 /* Dark "space" treatment so the globe pops against the otherwise light site. */
