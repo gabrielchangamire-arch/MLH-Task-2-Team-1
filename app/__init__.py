@@ -4,6 +4,8 @@ import os
 from flask import Flask, render_template
 from dotenv import load_dotenv
 
+# Hobby content lives in its own module so teammates can update images and names
+# without touching route or template logic (Single Responsibility).
 from .hobbies_data import TEAM_HOBBIES
 
 load_dotenv()
@@ -20,6 +22,7 @@ TEAM_MEMBERS = [
     {"name": "Gabriel Changamire", "photo": "gabriel-changamire.png"},
 ]
 
+# New nav items only need an entry here once a matching route exists.
 NAV_PAGES = [
     {"endpoint": "index", "label": "Home"},
     {"endpoint": "hobbies", "label": "Hobbies"},
@@ -30,6 +33,7 @@ app = Flask(__name__)
 
 @app.context_processor
 def inject_globals():
+    # Shared across all templates so the nav bar stays in sync automatically.
     return {
         "nav_pages": NAV_PAGES,
         "url": os.getenv("URL"),

@@ -1,3 +1,5 @@
+// Hobby popup behaviour — kept in a separate file so the template stays markup-only.
+
 document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("hobby-modal");
     const modalTitle = document.getElementById("hobby-modal-title");
@@ -8,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    // Must match the CSS transition duration so content is cleared after the close animation.
     const ANIMATION_MS = 250;
 
     const openModal = (name, gallery) => {
@@ -23,8 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         modal.setAttribute("aria-hidden", "false");
+        // Prevent scrolling the page behind the popup while it is open.
         document.body.style.overflow = "hidden";
 
+        // Defer the open class by one frame so the CSS transition actually runs.
         requestAnimationFrame(() => {
             modal.classList.add("is-open");
         });

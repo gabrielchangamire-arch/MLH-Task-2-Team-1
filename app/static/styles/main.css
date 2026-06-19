@@ -350,6 +350,7 @@ body {
     margin: 0;
 }
 
+/* Modal uses class toggles (not display:none) so open/close transitions can run in JS. */
 .hobby-modal {
     position: fixed;
     inset: 0;

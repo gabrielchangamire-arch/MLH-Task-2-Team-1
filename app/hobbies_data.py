@@ -1,4 +1,12 @@
 # Hobby images sourced from Unsplash (https://unsplash.com/license)
+#
+# Kept separate from __init__.py so content updates stay easy to review in PRs
+# and do not require changes to application wiring.
+#
+# Each hobby needs:
+#   - name:   label shown under the card
+#   - image:  thumbnail on the hobbies page
+#   - gallery: full-size images shown in the click popup
 
 TEAM_HOBBIES = [
     {

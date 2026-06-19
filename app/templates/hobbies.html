@@ -11,6 +11,8 @@
         <h2 class="member-hobbies-heading">{{ section.member }}</h2>
         <div class="hobbies-grid">
             {% for hobby in section.hobbies %}
+            {# Buttons (not links) because cards open a modal instead of navigating away. #}
+            {# Gallery is embedded as JSON so the JS popup can stay generic for every hobby. #}
             <button type="button"
                     class="hobby-card"
                     data-hobby-name="{{ hobby.name }}"
@@ -24,6 +26,7 @@
     {% endfor %}
 </section>
 
+{# Single shared modal keeps markup DRY; JS fills in title and images on click. #}
 <div id="hobby-modal" class="hobby-modal" aria-hidden="true">
     <div class="hobby-modal-overlay" data-modal-close></div>
     <div class="hobby-modal-content" role="dialog" aria-modal="true" aria-labelledby="hobby-modal-title">
@@ -35,5 +38,6 @@
 {% endblock %}
 
 {% block scripts %}
+{# Loaded only on hobbies page so other routes avoid unnecessary JS. #}
 <script src="{{ url_for('static', filename='js/hobbies.js') }}"></script>
 {% endblock %}
