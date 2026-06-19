@@ -1,6 +1,4 @@
-# About Us content, kept out of __init__.py so teammates can update bios and links
-# without touching route or template logic (same pattern as education_data.py).
-#
+# Team bios and links for the home page (Meet the Team section).#
 # Each member needs:
 #   - name:    full display name
 #   - photo:   filename in app/static/img/
@@ -10,6 +8,21 @@
 #   - links:   list of {"label", "url"} for GitHub, LinkedIn, etc.
 
 TEAM_ABOUT_US = [
+    {
+        "name": "Adam Maatouk",
+        "photo": "adam-maatouk.png",
+        "role": "MLH Fellow · Software Engineer",
+        "color": "#4ecdc4",
+        "bio": (
+            "Adam is a Computer Engineering student at Concordia University in Montreal. "
+            "He has a deep interest in building Software and building his own startup. "
+            "Outside of code he can usually be found behind a camera lens or lifting."
+        ),
+        "links": [
+            {"label": "GitHub", "url": "https://github.com/AdamMTK-NB"},
+            {"label": "LinkedIn", "url": "https://www.linkedin.com/in/adammaatouk/"},
+        ],
+    },
     {
         "name": "Amar Kanakamedala",
         "photo": "amar-kanakamedala.png",
@@ -24,21 +37,6 @@ TEAM_ABOUT_US = [
         "links": [
             {"label": "GitHub", "url": "https://github.com/amarka8"},
             {"label": "LinkedIn", "url": "https://linkedin.com/in/amar-kanakamedala/"},
-        ],
-    },
-    {
-        "name": "Adam Maatouk",
-        "photo": "adam-maatouk.png",
-        "role": "MLH Fellow · Software Engineer",
-        "color": "#4ecdc4",
-        "bio": (
-            "Adam is a Computer Engineering student at Concordia University in Montreal. "
-            "He has a deep interest in building Software. "
-            "Outside of code he can usually be found behind a camera lens or lifting."
-        ),
-        "links": [
-            {"label": "GitHub", "url": "https://github.com/AdamMTK-NB"},
-            {"label": "LinkedIn", "url": "https://www.linkedin.com/in/adammaatouk/"},
         ],
     },
     {
