@@ -177,7 +177,7 @@ body {
     height: 220px;
     border-radius: 50%;
     overflow: hidden;
-    background-color: #000000;
+    background-color: var(--member-color, #000000);
     padding: 4px;
 }
 
@@ -189,13 +189,16 @@ body {
     display: block;
 }
 
+.team-member-info {
+    flex: 1;
+    padding-top: 8px;
+}
+
 .team-member-name {
     color: #000000;
     font-size: 42px;
     font-weight: 500;
-    margin: 0;
-    padding-top: 8px;
-    flex: 1;
+    margin: 0 0 8px;
 }
 
 @media (max-width: 768px) {
@@ -220,6 +223,10 @@ body {
     .team-member-name {
         font-size: 32px;
     }
+
+    .team-member-info .about-us-bio {
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -239,6 +246,14 @@ body {
 
     .team-member-name {
         font-size: 24px;
+    }
+
+    .team-member-info .about-us-role {
+        font-size: 12px;
+    }
+
+    .team-member-info .about-us-bio {
+        font-size: 14px;
     }
 
     .nav-content {
@@ -751,57 +766,7 @@ body {
     text-decoration: underline;
 }
 
-/* ================================ About Us ================================== */
-
-.about-us-intro {
-    color: #555555;
-    font-size: 18px;
-    margin: -16px 0 40px;
-}
-
-.about-us-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.about-us-card {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    background-color: #ffffff;
-    border-radius: 16px;
-    border-left: 5px solid var(--member-color, #1d539f);
-    padding: 32px 32px 32px 28px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-}
-
-.about-us-photo-wrap {
-    flex-shrink: 0;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 4px solid var(--member-color, #1d539f);
-}
-
-.about-us-photo-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.about-us-body {
-    flex: 1;
-}
-
-.about-us-name {
-    font-size: 28px;
-    font-weight: 700;
-    color: #15233d;
-    margin: 0 0 4px;
-}
+/* Team member bios on the home page (data from about_us_data.py). */
 
 .about-us-role {
     font-size: 14px;
@@ -840,19 +805,6 @@ body {
 .about-us-link:hover {
     background-color: var(--member-color, #1d539f);
     color: #ffffff;
-}
-
-@media (max-width: 640px) {
-    .about-us-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 24px;
-    }
-
-    .about-us-links {
-        justify-content: center;
-    }
 }
 
 /* ================================== Map ===================================== */

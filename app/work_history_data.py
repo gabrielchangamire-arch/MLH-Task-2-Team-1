@@ -12,6 +12,72 @@
 
 TEAM_WORK_HISTORY = [
     {
+        "member": "Adam Maatouk",
+        "color": "#4ecdc4",
+        "roles": [
+            {
+                "title": "Meta Production Engineering Fellow",
+                "org": "Meta & Major League Hacking",
+                "kind": "Internship",
+                "dates": "Jun 2026 – Present",
+                "location": "North America · Remote",
+                "summary": "Mastering core Production Engineering (PE) and Site Reliability Engineering "
+                           "(SRE) concepts — system architecture, Linux internals, network protocols, "
+                           "and scripting. Collaborating on open-source projects and simulated production "
+                           "environments to optimize performance, reliability, and scalability, working "
+                           "with mentors and peers using Git, code reviews, and post-mortems.",
+            },
+            {
+                "title": "Founder",
+                "org": "Stealth Startup",
+                "kind": "Self-employed",
+                "dates": "Mar 2025 – Present",
+                "location": "Montreal, Quebec, Canada · Hybrid",
+                "summary": "Building a new venture (currently in stealth).",
+            },
+            {
+                "title": "Software Engineer",
+                "org": "Athena AI",
+                "kind": "Internship",
+                "dates": "Mar 2025 – Jul 2025",
+                "location": "Montreal, Quebec, Canada · Remote",
+                "summary": "Shipped production React + TypeScript features for a startup with 3M+ users: "
+                           "improved load times 35% and UI responsiveness 28%; built Python AI evaluation "
+                           "pipelines (+18% accuracy) and real-time model tuning (−22% low-confidence "
+                           "responses); cut recurring user-reported bugs 25%; supported live demos at "
+                           "World Summit AI.",
+            },
+            {
+                "title": "Material Handler",
+                "org": "Tanguay",
+                "kind": "Seasonal",
+                "dates": "Jun 2021 – Sep 2025",
+                "location": "Montreal, Quebec, Canada · On-site",
+                "summary": "Reduced product damage 15% by standardizing loading for 50+ units/shift; "
+                           "improved staging efficiency 20%; maintained 100% on-time shipment readiness; "
+                           "increased loading throughput 18%.",
+            },
+            {
+                "title": "Sales Associate",
+                "org": "Best Buy",
+                "kind": "Seasonal",
+                "dates": "Oct 2018 – Feb 2021",
+                "location": "Montreal, Quebec, Canada · On-site",
+                "summary": "Increased accessory sales 25%, hit 110% of quarterly targets, and reduced "
+                           "transaction errors 30% through careful POS verification.",
+            },
+            {
+                "title": "Camp Instructor",
+                "org": "Les Fourchettes de l'Espoir",
+                "kind": "Seasonal",
+                "dates": "Jun 2019 – Aug 2020",
+                "location": "Montreal, Quebec, Canada · On-site",
+                "summary": "Supervised groups of 20+ youth with zero safety incidents, improved engagement "
+                           "20%, and streamlined daily setup workflows.",
+            },
+        ],
+    },
+    {
         "member": "Amar Kanakamedala",
         "color": "#ff6b6b",
         "roles": [
@@ -80,72 +146,6 @@ TEAM_WORK_HISTORY = [
                 "location": "United States · Remote",
                 "summary": "Worked with CTO Saatvik Mohan and co-founder Hans Dekker to build a "
                            "lead-sheet formatter in Google Apps Script in 177 lines of code.",
-            },
-        ],
-    },
-    {
-        "member": "Adam Maatouk",
-        "color": "#4ecdc4",
-        "roles": [
-            {
-                "title": "Meta Production Engineering Fellow",
-                "org": "Meta & Major League Hacking",
-                "kind": "Internship",
-                "dates": "Jun 2026 – Present",
-                "location": "North America · Remote",
-                "summary": "Mastering core Production Engineering (PE) and Site Reliability Engineering "
-                           "(SRE) concepts — system architecture, Linux internals, network protocols, "
-                           "and scripting. Collaborating on open-source projects and simulated production "
-                           "environments to optimize performance, reliability, and scalability, working "
-                           "with mentors and peers using Git, code reviews, and post-mortems.",
-            },
-            {
-                "title": "Founder",
-                "org": "Stealth Startup",
-                "kind": "Self-employed",
-                "dates": "Mar 2025 – Present",
-                "location": "Montreal, Quebec, Canada · Hybrid",
-                "summary": "Building a new venture (currently in stealth).",
-            },
-            {
-                "title": "Software Engineer",
-                "org": "Athena AI",
-                "kind": "Internship",
-                "dates": "Mar 2025 – Jul 2025",
-                "location": "Montreal, Quebec, Canada · Remote",
-                "summary": "Shipped production React + TypeScript features for a startup with 3M+ users: "
-                           "improved load times 35% and UI responsiveness 28%; built Python AI evaluation "
-                           "pipelines (+18% accuracy) and real-time model tuning (−22% low-confidence "
-                           "responses); cut recurring user-reported bugs 25%; supported live demos at "
-                           "World Summit AI.",
-            },
-            {
-                "title": "Material Handler",
-                "org": "Tanguay",
-                "kind": "Seasonal",
-                "dates": "Jun 2021 – Sep 2025",
-                "location": "Montreal, Quebec, Canada · On-site",
-                "summary": "Reduced product damage 15% by standardizing loading for 50+ units/shift; "
-                           "improved staging efficiency 20%; maintained 100% on-time shipment readiness; "
-                           "increased loading throughput 18%.",
-            },
-            {
-                "title": "Sales Associate",
-                "org": "Best Buy",
-                "kind": "Seasonal",
-                "dates": "Oct 2018 – Feb 2021",
-                "location": "Montreal, Quebec, Canada · On-site",
-                "summary": "Increased accessory sales 25%, hit 110% of quarterly targets, and reduced "
-                           "transaction errors 30% through careful POS verification.",
-            },
-            {
-                "title": "Camp Instructor",
-                "org": "Les Fourchettes de l'Espoir",
-                "kind": "Seasonal",
-                "dates": "Jun 2019 – Aug 2020",
-                "location": "Montreal, Quebec, Canada · On-site",
-                "summary": "Supervised groups of 20+ youth with zero safety incidents, improved engagement "
-                           "20%, and streamlined daily setup workflows.",
             },
         ],
     },

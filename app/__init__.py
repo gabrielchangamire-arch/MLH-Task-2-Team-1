@@ -20,12 +20,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-TEAM_MEMBERS = [
-    {"name": "Adam Maatouk", "photo": "adam-maatouk.png"},
-    {"name": "Amar Kanakamedala", "photo": "amar-kanakamedala.png"},
-    {"name": "Gabriel Changamire", "photo": "gabriel-changamire.png"},
-]
-
 # New nav items only need an entry here once a matching route exists.
 NAV_PAGES = [
     {"endpoint": "index", "label": "Home"},
@@ -33,7 +27,6 @@ NAV_PAGES = [
     {"endpoint": "hobbies", "label": "Hobbies"},
     {"endpoint": "map_page", "label": "Map"},
     {"endpoint": "education", "label": "Education"},
-    {"endpoint": "about_us", "label": "About Us"},
 ]
 
 app = Flask(__name__)
@@ -54,7 +47,7 @@ def index():
     return render_template(
         "index.html",
         title="MLH Fellow",
-        team_members=TEAM_MEMBERS,
+        team_about=TEAM_ABOUT_US,
     )
 
 
@@ -80,12 +73,6 @@ def map_page():
 def education():
     logger.info("Serving education page")
     return render_template("education.html", title="Education", team_education=TEAM_EDUCATION)
-
-
-@app.route("/about_us")
-def about_us():
-    logger.info("Serving about us page")
-    return render_template("about_us.html", title="About Us", team_about=TEAM_ABOUT_US)
 
 
 @app.errorhandler(404)

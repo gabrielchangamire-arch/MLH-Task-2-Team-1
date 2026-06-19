@@ -12,6 +12,34 @@
 
 TEAM_EDUCATION = [
     {
+        "member": "Adam Maatouk",
+        "color": "#4ecdc4",
+        "degrees": [
+            {
+                "institution": "Concordia University",
+                "degree": "B.Eng. Computer Engineering",
+                "dates": "May 2025 – May 2029",
+                "location": "Montreal, Quebec, Canada",
+                "highlights": [
+                    "Relevant coursework: Operating Systems, Distributed Systems, Software Architecture",
+                    "Member of Concordia's Software Engineering Student Society",
+                ],
+                "link": {"label": "concordia.ca", "url": "https://www.concordia.ca"},
+            },
+            {
+                "institution": "College Maisonneuve",
+                "degree": "Techniques de l'Informatique - Developpement D'Applications",
+                "dates": "August 2022 – May 2025",
+                "location": "Montreal, Quebec, Canada",
+                "highlights": [
+                    "Relevant coursework: Programming, Database, Networking, Web Development",
+                    "91% average GPA in the program and mandatory internship",
+                ],
+                "link": {"label": "cmaisonneuve.qc.ca", "url": "https://www.cmaisonneuve.qc.ca"},
+            },
+        ],
+    },
+    {
         "member": "Amar Kanakamedala",
         "color": "#ff6b6b",
         "degrees": [
@@ -26,23 +54,6 @@ TEAM_EDUCATION = [
                     "Publication at ICLR proposing a new way to train LLMs",
                 ],
                 "link": {"label": "rice.edu", "url": "https://www.rice.edu"},
-            },
-        ],
-    },
-    {
-        "member": "Adam Maatouk",
-        "color": "#4ecdc4",
-        "degrees": [
-            {
-                "institution": "Concordia University",
-                "degree": "B.Eng. Computer Engineering",
-                "dates": "May 2025 – May 2029",
-                "location": "Montreal, Quebec, Canada",
-                "highlights": [
-                    "Relevant coursework: Operating Systems, Distributed Systems, Software Architecture",
-                    "Member of Concordia's Software Engineering Student Society",
-                ],
-                "link": {"label": "concordia.ca", "url": "https://www.concordia.ca"},
             },
         ],
     },
