@@ -13,11 +13,20 @@ body {
 
 .nav-bar {
     width: 100%;
-    display: inline-block;
     background-color: #1C539F;
     font-family: "Roboto", serif;
     font-weight: 700 !important;
-    padding-top: 10px;
+    padding: 14px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 0 48px;
+    box-sizing: border-box;
 }
 
 .nav-content .logo-touch-target {
@@ -41,12 +50,43 @@ body {
     width: 200px;
 }
 
-.nav-content nav {
-    display: block;
-    width: 100%;
-    text-align: right;
-    padding-top: 0px;
-    padding-right: 0px;
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.08);
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.nav-link-active {
+    background-color: #ffffff;
+    color: #1C539F;
+    border-color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-link-active:hover {
+    background-color: #f0f4fa;
+    color: #1C539F;
+    transform: none;
 }
 
 .profile {
@@ -200,4 +240,71 @@ body {
     .team-member-name {
         font-size: 24px;
     }
+
+    .nav-content {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+.page-content {
+    width: 100%;
+    padding: 48px 80px 60px;
+    box-sizing: border-box;
+}
+
+.page-heading {
+    color: #000000;
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 32px;
+}
+
+.page-placeholder {
+    color: #555555;
+    font-size: 20px;
+    margin: 0;
+}
+
+.hobbies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.hobby {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.hobby:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.hobby img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.hobby-name {
+    color: #000000;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0;
+    padding-top: 8px;
 }

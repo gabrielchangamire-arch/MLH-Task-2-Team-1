@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Hobbies{% endblock %}
+
+{% block content %}
+<section class="page-content">
+    <h1 class="page-heading">Hobbies</h1>
+
+    {% if hobbies %}
+    <div class="hobbies-list">
+        {% for hobby in hobbies %}
+        <article class="hobby">
+            <img src="{{ url_for('static', filename='img/' ~ hobby.image) }}" alt="{{ hobby.name }}">
+            <p class="hobby-name">{{ hobby.name }}</p>
+        </article>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="page-placeholder">Hobbies coming soon.</p>
+    {% endif %}
+</section>
+{% endblock %}
