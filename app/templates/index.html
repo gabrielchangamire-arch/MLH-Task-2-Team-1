@@ -32,9 +32,23 @@
 
     <div class="profile">
         <div id="profile-picture" class="profile-picture">
-            <img src="./static/img/logo.jpg">
+            <img src="./static/img/logo.jpg" alt="MLH Fellow profile photo">
         </div>
         <h1>{{ title }}</h1>
     </div>
+
+    <section class="team">
+        <h2 class="team-heading">Meet the Team</h2>
+        <div class="team-members">
+            {% for member in team_members %}
+            <article class="team-member">
+                <div class="team-member-photo">
+                    <img src="./static/img/{{ member.photo }}" alt="Photo of {{ member.name }}">
+                </div>
+                <p class="team-member-name">{{ member.name }}</p>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
 </body>
 </html>
