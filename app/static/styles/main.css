@@ -13,11 +13,20 @@ body {
 
 .nav-bar {
     width: 100%;
-    display: inline-block;
     background-color: #1C539F;
     font-family: "Roboto", serif;
     font-weight: 700 !important;
-    padding-top: 10px;
+    padding: 14px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 0 48px;
+    box-sizing: border-box;
 }
 
 .nav-content .logo-touch-target {
@@ -41,12 +50,43 @@ body {
     width: 200px;
 }
 
-.nav-content nav {
-    display: block;
-    width: 100%;
-    text-align: right;
-    padding-top: 0px;
-    padding-right: 0px;
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.08);
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.nav-link-active {
+    background-color: #ffffff;
+    color: #1C539F;
+    border-color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-link-active:hover {
+    background-color: #f0f4fa;
+    color: #1C539F;
+    transform: none;
 }
 
 .profile {
@@ -94,4 +134,360 @@ body {
     color: white;
     font-size: 50px;
     font-weight: 700;
+}
+
+.team {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 60px;
+    padding: 0 48px 0 80px;
+    box-sizing: border-box;
+}
+
+.team-heading {
+    color: #000000;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 40px;
+}
+
+.team-members {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.team-member {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+    padding: 36px 0;
+    border-bottom: 1px solid #d0d0d0;
+    width: 100%;
+}
+
+.team-member:last-child {
+    border-bottom: none;
+}
+
+.team-member-photo {
+    flex-shrink: 0;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #000000;
+    padding: 4px;
+}
+
+.team-member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.team-member-name {
+    color: #000000;
+    font-size: 42px;
+    font-weight: 500;
+    margin: 0;
+    padding-top: 8px;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .team {
+        padding: 0 32px;
+    }
+
+    .team-heading {
+        font-size: 32px;
+    }
+
+    .team-member {
+        gap: 28px;
+        padding: 28px 0;
+    }
+
+    .team-member-photo {
+        width: 160px;
+        height: 160px;
+    }
+
+    .team-member-name {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team {
+        padding: 0 20px;
+    }
+
+    .team-member {
+        gap: 20px;
+        padding: 24px 0;
+    }
+
+    .team-member-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .team-member-name {
+        font-size: 24px;
+    }
+
+    .nav-content {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+.page-content {
+    width: 100%;
+    padding: 48px 80px 60px;
+    box-sizing: border-box;
+}
+
+.page-heading {
+    color: #000000;
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 32px;
+}
+
+.page-placeholder {
+    color: #555555;
+    font-size: 20px;
+    margin: 0;
+}
+
+.hobbies-page {
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+.hobbies-page .page-heading {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 48px;
+}
+
+.member-hobbies-section {
+    margin-bottom: 64px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid #d0d0d0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.member-hobbies-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.member-hobbies-heading {
+    color: #1d539f;
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 36px;
+    text-align: center;
+}
+
+.hobbies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.hobby-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: center;
+    width: 240px;
+    transition: transform 0.15s ease;
+}
+
+.hobby-card:hover {
+    transform: translateY(-6px);
+}
+
+.hobby-card img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
+}
+
+.hobby-card-name {
+    color: #000000;
+    font-size: 26px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Modal uses class toggles (not display:none) so open/close transitions can run in JS. */
+.hobby-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.hobby-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.hobby-modal.is-closing {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.hobby-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.hobby-modal.is-open .hobby-modal-overlay {
+    opacity: 1;
+}
+
+.hobby-modal.is-closing .hobby-modal-overlay {
+    opacity: 0;
+}
+
+.hobby-modal-content {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 36px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.hobby-modal.is-open .hobby-modal-content {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.hobby-modal.is-closing .hobby-modal-content {
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+}
+
+.hobby-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    line-height: 1;
+    color: #555555;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.hobby-modal-close:hover {
+    color: #000000;
+}
+
+.hobby-modal-title {
+    color: #1d539f;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 48px 28px 0;
+    text-align: center;
+}
+
+.hobby-modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.hobby-modal-gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .hobbies-page .page-heading {
+        font-size: 36px;
+    }
+
+    .hobbies-grid {
+        gap: 28px;
+    }
+
+    .hobby-card {
+        width: 180px;
+    }
+
+    .hobby-card img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .hobby-card-name {
+        font-size: 22px;
+    }
+
+    .member-hobbies-heading {
+        font-size: 32px;
+    }
+
+    .hobby-modal-content {
+        padding: 24px 20px;
+    }
+
+    .hobby-modal-gallery {
+        grid-template-columns: 1fr;
+    }
 }
