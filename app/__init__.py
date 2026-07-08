@@ -1,9 +1,11 @@
 import logging
 import os
+import datetime
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from dotenv import load_dotenv
-from peewee import MySQLDatabase
+from peewee import CharField, DateTimeField, Model, MySQLDatabase, TextField
+from playhouse.shortcuts import model_to_dict
 
 # Hobby content lives in its own module so teammates can update images and names
 # without touching route or template logic (Single Responsibility).
@@ -41,6 +43,20 @@ mydb = MySQLDatabase(
 )
 
 print(mydb)
+
+
+class TimelinePost(Model):
+    name = CharField()
+    email = CharField()
+    content = TextField()
+    created_at = DateTimeField(default=datetime.datetime.now)
+
+    class Meta:
+        database = mydb
+
+
+mydb.connect(reuse_if_open=True)
+mydb.create_tables([TimelinePost])
 
 
 @app.context_processor
@@ -96,3 +112,33 @@ def page_not_found(error):
 def internal_server_error(error):
     logger.error("Internal server error: %s", error)
     return "Internal server error", 500
+
+
+@app.route("/api/timeline_post", methods=["POST"])
+def post_time_line_post():
+    name = request.form["name"]
+    email = request.form["email"]
+    content = request.form["content"]
+    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+
+    return model_to_dict(timeline_post)
+
+
+@app.route("/api/timeline_post", methods=["GET"])
+def get_time_line_post():
+    return {
+        "timeline_posts": [
+            model_to_dict(post)
+            for post in TimelinePost.select().order_by(TimelinePost.created_at.desc())
+        ]
+    }
+
+
+@app.route("/api/timeline_post/<int:post_id>", methods=["DELETE"])
+def delete_time_line_post(post_id):
+    deleted_count = TimelinePost.delete().where(TimelinePost.id == post_id).execute()
+
+    if deleted_count == 0:
+        return {"error": "Timeline post not found"}, 404
+
+    return {"deleted": post_id}
