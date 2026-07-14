@@ -1,12 +1,11 @@
-# test_db.py
+# tests/test_db.py
+
 import os
 import sys
 import unittest
 from peewee import *
 
-# Ensure the project root (parent of this tests/ folder) is on sys.path,
-# so `from app import ...` works whether you run this via
-# `pytest`, `python -m unittest`, or `python tests/test_db.py` directly.
+# Ensure the project root (parent of this tests/ folder) is on sys.path, so `from app import ...` works whether you run this via `pytest`, `python -m unittest`, or `python tests/test_db.py` directly.
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from app import TimelinePost
