@@ -236,6 +236,11 @@ form.addEventListener("submit", async (event) => {
     });
 
     if (!response.ok) {
+        if (response.status === 429) {
+            message.textContent = "Rate limit reached. Please wait a minute before posting again.";
+            return;
+        }
+
         message.textContent = "Could not post that update.";
         return;
     }
