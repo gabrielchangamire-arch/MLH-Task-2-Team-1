@@ -5,8 +5,8 @@ set -euo pipefail
 PROJECT_DIR="/root/MLH-Task-2-Team-1"
 BRANCH="main"
 COMPOSE_FILE="docker-compose.prod.yml"
-LOCAL_URL="http://127.0.0.1:5000/"
-PUBLIC_URL="http://gabriel-p.duckdns.org:5000"
+HEALTH_URL="https://gabriel-p.duckdns.org/timeline"
+PUBLIC_URL="https://gabriel-p.duckdns.org"
 
 # Run every deploy command from the project folder so paths stay predictable.
 echo "Moving into the project directory..."
@@ -25,21 +25,21 @@ docker compose -f "$COMPOSE_FILE" down
 echo "Building and starting Docker containers..."
 docker compose -f "$COMPOSE_FILE" up -d --build
 
-# Give Flask a few seconds to boot before checking the local URL.
-echo "Checking the local site..."
-for attempt in {1..10}; do
-  if curl --fail --silent --show-error --max-time 3 "$LOCAL_URL" >/dev/null; then
+# NGINX may need time to refresh certificates before HTTPS is ready.
+echo "Checking the HTTPS site..."
+for attempt in {1..60}; do
+  if curl --fail --silent --show-error --max-time 10 "$HEALTH_URL" >/dev/null; then
     echo "Redeploy complete."
     echo "Live URL: $PUBLIC_URL"
     echo "Logs: docker compose -f $COMPOSE_FILE logs -f"
     exit 0
   fi
 
-  echo "Waiting for Flask to start... ($attempt/10)"
-  sleep 1
+  echo "Waiting for HTTPS to respond... ($attempt/60)"
+  sleep 5
 done
 
-echo "Flask did not respond at $LOCAL_URL."
+echo "The HTTPS site did not respond at $HEALTH_URL."
 echo "Check containers with: docker compose -f $COMPOSE_FILE ps"
 echo "Check logs with: docker compose -f $COMPOSE_FILE logs --tail=80"
 exit 1
