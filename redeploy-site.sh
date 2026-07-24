@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Change these values if the project path, branch, or service name changes.
+# Change these values if the project path, branch, or compose file changes.
 PROJECT_DIR="/root/MLH-Task-2-Team-1"
-VENV_DIR="$PROJECT_DIR/python3-virtualenv"
 BRANCH="main"
-SERVICE_NAME="myportfolio"
+COMPOSE_FILE="docker-compose.prod.yml"
 LOCAL_URL="http://127.0.0.1:5000/"
 PUBLIC_URL="http://gabriel-p.duckdns.org:5000"
 
@@ -18,14 +17,13 @@ echo "Pulling the latest code from GitHub..."
 git fetch origin "$BRANCH"
 git reset --hard "origin/$BRANCH"
 
-# Refresh dependencies inside the existing virtual environment.
-echo "Installing Python dependencies..."
-source "$VENV_DIR/bin/activate"
-python -m pip install -r requirements.txt
+# Stop the old containers first so the VPS has enough memory for a clean build.
+echo "Stopping existing containers..."
+docker compose -f "$COMPOSE_FILE" down
 
-# systemd owns the Flask process now, so a restart is cleaner than tmux.
-echo "Restarting $SERVICE_NAME service..."
-systemctl restart "$SERVICE_NAME"
+# Rebuild the Flask image and start the app/database containers in the background.
+echo "Building and starting Docker containers..."
+docker compose -f "$COMPOSE_FILE" up -d --build
 
 # Give Flask a few seconds to boot before checking the local URL.
 echo "Checking the local site..."
@@ -33,7 +31,7 @@ for attempt in {1..10}; do
   if curl --fail --silent --show-error --max-time 3 "$LOCAL_URL" >/dev/null; then
     echo "Redeploy complete."
     echo "Live URL: $PUBLIC_URL"
-    echo "Logs: journalctl -u $SERVICE_NAME -f"
+    echo "Logs: docker compose -f $COMPOSE_FILE logs -f"
     exit 0
   fi
 
@@ -42,6 +40,6 @@ for attempt in {1..10}; do
 done
 
 echo "Flask did not respond at $LOCAL_URL."
-echo "Check service status with: systemctl status $SERVICE_NAME"
-echo "Check logs with: journalctl -u $SERVICE_NAME -n 50"
+echo "Check containers with: docker compose -f $COMPOSE_FILE ps"
+echo "Check logs with: docker compose -f $COMPOSE_FILE logs --tail=80"
 exit 1
